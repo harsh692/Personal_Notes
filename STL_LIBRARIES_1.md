@@ -42,7 +42,7 @@ std:vector<int> a(3);
  if not used namespace then would have given the error that two definition is defined.  
 
 ## Struct
-This is a type of container which when definded is a separte data type in itself.
+This is a type of container which when defined is a separte data type in itself.
 
 ```c++
 struct node{
@@ -69,7 +69,9 @@ int main()
     one.c="hello";
 
     //approach 2
-    node two = new node(2,'c',"hello");
+    node *two = new node(2,'c',"hello");
+    //OR
+    node three = node(3,'a',"hello");
 
 }
 ```
@@ -79,7 +81,7 @@ You can use any type of data inside a struct ex. __Array[] , int , double__ etc.
 ## Arrays :
  This is not that much.
 
- IF defind inside main scope, an array is initialised with garbage or null values.  
+ IF defined inside main scope, an array is initialised with garbage or null values.  
  BUT when defined in global scope, they are initialised with default values of type.
 
  ```c++
@@ -112,18 +114,18 @@ a.size() // size of array
 Example :  
 ```c++
 array<int,4> a={1,2,3,4};
-for(auto it:a.begin();it!=a.end();it++)
+for(auto it=a.begin();it!=a.end();it++)
 {
     cout<< *it <<endl; // it is a pointer therefore we just have to get its value by *it.
 }
 
-for(auto it:a.rbegin();it!=a.rend();it++)
+for(auto it=a.rbegin();it!=a.rend();it++)
 {
     cout<< *it <<endl; // Reverse Print
     // it should not be it--, here since its a pointer ,it will automatically move backwards when it++ is written.
 }
 
-for(auto it:a.end()-1;it>=a.begin;it--)
+for(auto it=a.end()-1;it>=a.begin;it--)
 {
     cout<< *it <<endl; // Reverse order approach 2
     }
